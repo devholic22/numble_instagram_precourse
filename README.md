@@ -1,6 +1,7 @@
 # numble_instagram_precourse
 Numble 인스타그램 챌린지 시작 전 필요한 기술을 공부해보는 레포지토리
 ## 필요한 구현 목록
+* [x] mySQL 적용
 * [ ] JPA 적용
 * [ ] 피드목록 조회
 * [ ] 글 등록
