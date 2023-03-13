@@ -1,10 +1,12 @@
 package numble.instagramprecourse.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.*;
 
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -41,4 +43,8 @@ public class User {
             inverseJoinColumns = {@JoinColumn(name = "authority_name", referencedColumnName = "authority_name")}
     )
     private Set<Authority> authorities;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user")
+    private List<Board> boards;
 }
