@@ -28,6 +28,10 @@ public class BoardService {
         return boardRepository.findByUserId(user.getId());
     }
 
+    public List<Board> findAll() {
+        return boardRepository.findAll();
+    }
+
     public Optional<Board> findById(Long id) {
         return boardRepository.findById(id);
     }

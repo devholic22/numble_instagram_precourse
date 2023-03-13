@@ -31,23 +31,25 @@ public class BoardController {
         this.boardRepository = boardRepository;
     }
 
-    @GetMapping
-    public ResponseEntity<List<Board>> myBoards(Principal principal) {
-        String username = principal.getName();
-        List<Board> boards = boardService.findBoardsByUsername(username);
-        return ResponseEntity.ok(boards);
-    }
 
     @PostMapping
+    // 글 작성
     public ResponseEntity<Board> writeBoard(@Valid @RequestBody BoardDto boardDto, Principal principal) {
         Board board = boardService.write(boardDto, principal);
         return ResponseEntity.ok(board);
     }
 
+    @GetMapping
+    // 모든 글 조회
+    public ResponseEntity<List<Board>> findAll() {
+        List<Board> boards = boardService.findAll();
+        return ResponseEntity.ok(boards);
+    }
+
     @GetMapping("/{id}")
-    public ResponseEntity<Optional<Board>> findById(Long id) {
+    // 특정 글 조회
+    public ResponseEntity<Optional<Board>> findById(@PathVariable Long id) {
         Optional<Board> board = boardService.findById(id);
         return ResponseEntity.ok(board);
     }
-
 }
