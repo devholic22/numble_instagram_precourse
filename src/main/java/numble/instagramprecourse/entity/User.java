@@ -1,7 +1,6 @@
 package numble.instagramprecourse.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.*;
@@ -34,6 +33,7 @@ public class User {
     private String email;
 
     @JsonIgnore
+    @Column(columnDefinition = "INT")
     private boolean activated;
 
     @ManyToMany
