@@ -23,7 +23,7 @@ Numble 인스타그램 챌린지 시작 전 필요한 기술을 공부해보는 
 * [ ] DM 목록 조회
 * [ ] 팔로우
 * [ ] 팔로우 취소
-* [ ] 프로필 조회
+* [x] 프로필 조회
 * [ ] 프로필 수정
 * [ ] AWS Elastic Beanstalk 적용하여 배포
 * [ ] Github Actions 적용하여 CI/CD 작업
